@@ -1,7 +1,7 @@
 name: Scheduled Index.html Update and Deploy
 on:
   schedule:
-    - cron: '15 19 20 7 *' # Runs on July 20th at 3:15 PM EST
+    - cron: '30 19 20 7 *' # Runs on July 20th at 3:30 PM EDT
   workflow_dispatch: # Allows manual triggering for testing
 permissions:
   contents: write
