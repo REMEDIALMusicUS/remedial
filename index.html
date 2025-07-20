@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>R E M E D I A L</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:title" content="R E M E D I A L">
     <meta property="og:type" content="website">
-    <link rel="icon" href="favicon.ico?" type="image/x-icon">
-    <!-- Replace with your hosted image URL for Open Graph -->
     <meta property="og:image" content="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/OpenGraph.png">
-    <!-- Tailwind CSS CDN -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Google Fonts for Montserrat and Arimo -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Arimo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-text: #DFDFDF;
+            --secondary-text: #242424;
+            --nav-text: #9b9b9b;
+            --background-dark: #242424;
+        }
+
         body {
             font-family: 'Montserrat', sans-serif;
-            color: #242424;
-            background-color: #ffffff;
+            color: var(--secondary-text);
+            background: url('https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Tracks.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            overflow-x: hidden;
         }
+
         .section {
             min-height: 100vh;
             display: flex;
@@ -26,76 +34,93 @@
             justify-content: center;
             align-items: center;
             padding: 3rem;
+            position: relative;
         }
+
         .music-section {
-            background-color: #DFDFDF;
             min-height: 75vh;
             padding: 1rem;
+            background: transparent;
         }
+
+        .home-section, .about-section {
+            background-color: var(--background-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
         .nav-link {
-            color: #9b9b9b;
+            color: var(--nav-text);
             font-size: 0.7rem;
-            font-family: 'Montserrat', sans-serif;
-            margin: 0 0.1rem;
             text-decoration: none;
             letter-spacing: 0.2em;
+            margin: 0 0.1rem;
         }
+
         .nav-link:hover {
-            color: #242424;
+            color: var(--secondary-text);
         }
+
         .social-icon {
             width: 48px;
             height: 48px;
             margin: 0.5rem;
         }
+
         .youtube-icon {
             height: 48px;
             width: auto;
             margin: 0.5rem;
         }
+
         .subtitle {
-            color: #DFDFDF;
+            color: var(--primary-text);
             font-size: 1.25rem;
             font-weight: 600;
             text-align: center;
             letter-spacing: 0.2em;
             margin-bottom: 6rem;
         }
+
         .album-subtitle {
-            color: #242424;
-            font-size: 1rem;
-            font-weight: 400;
+            color: var(--primary-text);
+            font-size: 1.25rem;
+            font-weight: 600;
             text-align: center;
             letter-spacing: 0.2em;
             margin-bottom: 1rem;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
         }
+
         .copyright {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            color: #DFDFDF;
+            color: var(--primary-text);
             font-size: 0.65rem;
-            text-align: center;
+            letter-spacing: 0.2em;
             margin-top: auto;
             padding-bottom: 1rem;
-            letter-spacing: 0.2em;
         }
+
         .copyright-logo {
             height: 0.6rem;
             width: auto;
             object-fit: contain;
         }
+
         .hero-title {
-            font-size: clamp(0.5rem, 5vw, 2.3rem); /* Scaling for desktop */
+            font-size: clamp(0.5rem, 5vw, 2.3rem);
             font-weight: 600;
             text-align: center;
-            color: #DFDFDF;
+            color: var(--primary-text);
             letter-spacing: 0.2em;
             margin-bottom: 6rem;
             max-width: 90vw;
-            white-space: nowrap; /* Prevent wrapping */
+            white-space: nowrap;
         }
+
         .section-title {
             font-size: 1.5rem;
             font-weight: bold;
@@ -103,21 +128,13 @@
             width: 100%;
             letter-spacing: 0.2em;
             margin-bottom: 1.5rem;
-            color: #DFDFDF;
+            color: var(--primary-text);
             padding: 1.5rem;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
         }
-        .section-title-black {
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-align: left;
-            width: 100%;
-            letter-spacing: 0.2em;
-            margin-bottom: 1.5rem;
-            color: #242424;
-            padding: 1.5rem;
-        }
+
         .about-text {
-            color: #DFDFDF;
+            color: var(--primary-text);
             font-size: 1.25rem;
             font-weight: bold;
             text-transform: uppercase;
@@ -127,19 +144,16 @@
             margin-right: auto;
             letter-spacing: 0.15em;
         }
-        .home-section {
-            background-color: #242424;
-        }
-        .about-section {
-            background-color: #242424;
-        }
+
         .youtube-iframe {
             width: 100%;
             max-width: 700px;
             height: calc(100vw * 9 / 16);
             max-height: 394px;
             margin-bottom: 3rem;
+            border: 0;
         }
+
         .album-art {
             width: 100%;
             max-width: 400px;
@@ -148,38 +162,59 @@
             margin-bottom: 2.5rem;
             animation: glow 3s ease-in-out infinite;
         }
+
         .top-left-image {
-            position: fixed;
-            top: 0;
+            position: absolute;
+            top: 50%;
             left: 7px;
             width: 35px;
             height: 35px;
             object-fit: contain;
+            transform: translateY(-50%);
             z-index: 20;
-            padding-top: 0.75rem;
         }
+
+        .nav-container {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0.75rem 1rem;
+        }
+
         .remedial-logo {
             max-width: 90vw;
             max-height: 50vh;
             object-fit: contain;
         }
-        /* Glow animation */
+
+        .starfield {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
         @keyframes glow {
             0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); }
-            50% { box-shadow: 0 0 25px rgba(255, 255, 255, 0.7); }
+            50% { box-shadow: 0 0 40px rgba(255, 255, 255, 1.5); }
             100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); }
         }
-        /* Fade-in/rise-up animation */
+
         .fade-in {
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 1s ease-out, transform 0.7s ease-out;
         }
+
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        /* Typewriter effect */
+
         .typewriter-delay {
             overflow: hidden;
             white-space: nowrap;
@@ -189,22 +224,26 @@
             display: inline-block;
             width: 0;
             min-height: 1.5rem;
-            height: 1.5rem;
-            color: #DFDFDF;
+            color: var(--primary-text);
             margin-bottom: 3.75rem;
         }
+
         @keyframes typing-long {
             from { width: 0; }
             to { width: 100%; }
         }
+
         @keyframes show {
             to { visibility: visible; }
         }
+
+        /* Media Queries */
         @media (max-width: 1340px) {
             .hero-title {
-                font-size: clamp(0.5rem, 3.2vw, 1.25rem); /* Intermediate scaling */
+                font-size: clamp(0.5rem, 3.2vw, 1.25rem);
             }
         }
+
         @media (max-width: 720px) {
             .section {
                 padding: 0.5rem;
@@ -213,31 +252,21 @@
                 padding: 0.5rem;
                 min-height: 60vh;
             }
-            .social-icon {
+            .social-icon, .youtube-icon {
                 width: 36px;
                 height: 36px;
             }
-            .youtube-icon {
-                height: 36px;
-                width: auto;
-            }
             .hero-title {
-                font-size: clamp(0.5rem, 2.5vw, 0.7rem); /* Smaller for mobile */
+                font-size: clamp(0.5rem, 2.5vw, 0.7rem);
             }
-            .subtitle {
+            .subtitle, .album-subtitle {
                 font-size: 1rem;
-            }
-            .album-subtitle {
-                font-size: 0.875rem;
             }
             .about-text {
                 font-size: 1.125rem;
                 max-width: 95%;
             }
             .section-title {
-                font-size: 1.25rem;
-            }
-            .section-title-black {
                 font-size: 1.25rem;
             }
             .remedial-logo {
@@ -252,6 +281,7 @@
                 max-width: 300px;
             }
         }
+
         @media (max-width: 480px) {
             .nav-link {
                 font-size: 0.6rem;
@@ -264,72 +294,104 @@
     </style>
 </head>
 <body>
-    <!-- Top-left image -->
-    <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/R_Black_NoBackground.png" alt="Top Left Image" class="top-left-image">
-
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-10 py-3">
-        <div class="container mx-auto flex justify-end px-2">
-            <a href="#home" class="nav-link">HOME |</a>
-            <a href="#music" class="nav-link">MUSIC |</a>
-            <a href="#about" class="nav-link">ABOUT</a>
+    <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-10">
+        <div class="nav-container mx-auto">
+            <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/R_Black_NoBackground.png" alt="REMEDIAL Logo" class="top-left-image">
+            <div class="flex">
+                <a href="#home" class="nav-link">HOME |</a>
+                <a href="#music" class="nav-link">MUSIC |</a>
+                <a href="#about" class="nav-link">ABOUT</a>
+            </div>
         </div>
     </nav>
-
-    <!-- Home Section -->
     <section id="home" class="section home-section">
+        <canvas class="starfield"></canvas>
         <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Remedial_White_NoBackground.png" alt="REMEDIAL Logo" class="mb-4 fade-in remedial-logo">
         <h1 class="hero-title fade-in">METAL VOCAL ARRANGEMENTS & ORIGINAL MUSIC</h1>
         <p class="subtitle typewriter-delay fade-in">NEW MUSIC COMING SOON</p>
         <div class="flex flex-wrap justify-center mt-4">
             <a href="https://www.youtube.com/@REMEDIALMusicUS" target="_blank" class="fade-in">
-                <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Youtube.svg" alt="YouTube" class="youtube-icon">
+                <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Youtube.svg" alt="YouTube Link" class="youtube-icon">
             </a>
             <a href="https://open.spotify.com/artist/1PGZu5BotxU53lGxRbiaMy?si=rFuLCa_MTNq8BeNMVtmzVA" target="_blank" class="fade-in">
-                <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Spotify.svg" alt="Spotify" class="social-icon">
+                <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Spotify.svg" alt="Spotify Link" class="social-icon">
             </a>
             <a href="https://music.apple.com/us/artist/remedial/304021255" target="_blank" class="fade-in">
-                <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Apple.svg" alt="Apple Music" class="social-icon">
+                <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Apple.svg" alt="Apple Music Link" class="social-icon">
             </a>
             <a href="https://tidal.com/browse/artist/44850156?u" target="_blank" class="fade-in">
-                <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Tidal.jpg" alt="Tidal" class="social-icon">
+                <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Tidal.jpg" alt="Tidal Link" class="social-icon">
             </a>
         </div>
     </section>
-
-    <!-- Music Section -->
     <section id="music" class="section music-section">
-        <div class="section-title-black fade-in">RELEASES</div>
-        <iframe class="youtube-iframe fade-in mx-auto" src="//www.youtube.com/embed/Xz4GvOlwAlc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border:0" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-popups-to-escape-sandbox"></iframe>
-        <iframe class="youtube-iframe fade-in mx-auto" src="//www.youtube.com/embed/pIwImVBSUms" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border:0" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-popups-to-escape-sandbox"></iframe>
+        <div class="section-title fade-in">RELEASES</div>
+        <iframe class="youtube-iframe fade-in mx-auto" src="//www.youtube.com/embed/Xz4GvOlwAlc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-popups-to-escape-sandbox"></iframe>
+        <iframe class="youtube-iframe fade-in mx-auto" src="//www.youtube.com/embed/pIwImVBSUms" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-popups-to-escape-sandbox"></iframe>
         <div class="album-subtitle fade-in">COMING SOON</div>
         <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/AlbumArt.jpeg" alt="Album Art" class="album-art fade-in">
     </section>
-
-    <!-- About Section -->
     <section id="about" class="section about-section">
-        <div class="section-title text-white fade-in">ABOUT</div>
+        <canvas class="starfield"></canvas>
+        <div class="section-title fade-in">ABOUT</div>
         <p class="about-text fade-in mx-auto">Remedial is a music project by Matt Vacaro, former vocalist of Exiting the Fall. I write, produce, and record original metal music, vocal arrangements, and covers. While Remedial focuses primarily on metal, I occasionally hop across genres and nuances. I aim to do creative things with metal vocals, crafting unique vocal lines for instrumental tracks and releasing original music. Interested in collaborating or having me write vocals for your project? <a href="mailto:remedialmusicus@gmail.com" class="underline">Get in touch!</a></p>
         <div class="copyright fade-in">
             <span>©2025</span>
-            <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Remedial_White_NoBackground.png" alt="Copyright Logo" class="copyright-logo">
+            <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Remedial_White_NoBackground.png" alt="REMEDIAL Copyright Logo" class="copyright-logo">
         </div>
     </section>
-
-    <script>
-        // Intersection Observer for fade-in/rise-up animations
-        const elements = document.querySelectorAll('.fade-in');
+    <script defer>
+        // Fade-in animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 100);
+                    setTimeout(() => entry.target.classList.add('visible'), index * 100);
                 }
             });
         }, { threshold: 0.1 });
 
-        elements.forEach(element => observer.observe(element));
+        document.querySelectorAll('.fade-in').forEach(element => observer.observe(element));
+
+        // Starfield effect
+        document.querySelectorAll('.starfield').forEach(canvas => {
+            const ctx = canvas.getContext('2d');
+            let stars = [];
+
+            const resizeCanvas = () => {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+                stars = Array.from({ length: Math.floor((canvas.width * canvas.height) / 10000) }, () => ({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 1 + 0.3,
+                    speed: Math.random() * 0.2 + 0.05,
+                    opacity: Math.random() * 0.3 + 0.2
+                }));
+            };
+
+            const drawStars = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+                stars.forEach(star => {
+                    ctx.beginPath();
+                    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                    ctx.globalAlpha = star.opacity;
+                    ctx.fill();
+                    star.y += star.speed;
+                    if (star.y > canvas.height) star.y = 0;
+                });
+                ctx.globalAlpha = 1.0;
+            };
+
+            const animate = () => {
+                drawStars();
+                requestAnimationFrame(animate);
+            };
+
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+            animate();
+        });
     </script>
 </body>
 </html>
