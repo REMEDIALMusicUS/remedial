@@ -8,7 +8,7 @@
     <meta property="og:type" content="website">
     <link rel="icon" href="favicon.ico?" type="image/x-icon">
     <!-- Replace with your hosted image URL for Open Graph -->
-    <meta property="og:image" content="https://raw.githubusercontent.com/remedialmusic/remedialmusic.gitihub.io/main/images/OpenGraph.png">
+    <meta property="og:image" content="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/OpenGraph.png">
     <!-- Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Google Fonts for Montserrat and Arimo -->
@@ -29,7 +29,7 @@
         }
         .music-section {
             background-color: #DFDFDF;
-            min-height: 65vh;
+            min-height: 75vh;
             padding: 1rem;
         }
         .nav-link {
@@ -70,12 +70,21 @@
             margin-bottom: 1rem;
         }
         .copyright {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
             color: #DFDFDF;
             font-size: 0.65rem;
             text-align: center;
             margin-top: auto;
             padding-bottom: 1rem;
             letter-spacing: 0.2em;
+        }
+        .copyright-logo {
+            height: 0.6rem;
+            width: auto;
+            object-fit: contain;
         }
         .hero-title {
             font-size: clamp(0.5rem, 5vw, 2.3rem); /* Scaling for desktop */
@@ -137,6 +146,7 @@
             height: auto;
             object-fit: contain;
             margin-bottom: 2.5rem;
+            animation: glow 3s ease-in-out infinite;
         }
         .top-left-image {
             position: fixed;
@@ -152,6 +162,12 @@
             max-width: 90vw;
             max-height: 50vh;
             object-fit: contain;
+        }
+        /* Glow animation */
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); }
+            50% { box-shadow: 0 0 25px rgba(255, 255, 255, 0.7); }
+            100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); }
         }
         /* Fade-in/rise-up animation */
         .fade-in {
@@ -195,7 +211,7 @@
             }
             .music-section {
                 padding: 0.5rem;
-                min-height: 50vh;
+                min-height: 60vh;
             }
             .social-icon {
                 width: 36px;
@@ -249,7 +265,7 @@
 </head>
 <body>
     <!-- Top-left image -->
-    <img src="https://raw.githubusercontent.com/remedialmusic/remedialmusic.gitihub.io/main/images/R_Black_NoBackground.png" alt="Top Left Image" class="top-left-image">
+    <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/R_Black_NoBackground.png" alt="Top Left Image" class="top-left-image">
 
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-10 py-3">
@@ -262,21 +278,21 @@
 
     <!-- Home Section -->
     <section id="home" class="section home-section">
-        <img src="https://raw.githubusercontent.com/remedialmusic/remedialmusic.gitihub.io/main/images/Remedial_White_NoBackground.png" alt="REMEDIAL Logo" class="mb-4 fade-in remedial-logo">
+        <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Remedial_White_NoBackground.png" alt="REMEDIAL Logo" class="mb-4 fade-in remedial-logo">
         <h1 class="hero-title fade-in">METAL VOCAL ARRANGEMENTS & ORIGINAL MUSIC</h1>
         <p class="subtitle typewriter-delay fade-in">NEW MUSIC COMING SOON</p>
         <div class="flex flex-wrap justify-center mt-4">
             <a href="https://www.youtube.com/@REMEDIALMusicUS" target="_blank" class="fade-in">
-                <img src="https://raw.githubusercontent.com/remedialmusic/remedialmusic.gitihub.io/main/images/Youtube.svg" alt="YouTube" class="youtube-icon">
+                <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Youtube.svg" alt="YouTube" class="youtube-icon">
             </a>
             <a href="https://open.spotify.com/artist/1PGZu5BotxU53lGxRbiaMy?si=rFuLCa_MTNq8BeNMVtmzVA" target="_blank" class="fade-in">
-                <img src="https://raw.githubusercontent.com/remedialmusic/remedialmusic.gitihub.io/main/images/Spotify.svg" alt="Spotify" class="social-icon">
+                <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Spotify.svg" alt="Spotify" class="social-icon">
             </a>
             <a href="https://music.apple.com/us/artist/remedial/304021255" target="_blank" class="fade-in">
-                <img src="https://raw.githubusercontent.com/remedialmusic/remedialmusic.gitihub.io/main/images/Apple.svg" alt="Apple Music" class="social-icon">
+                <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Apple.svg" alt="Apple Music" class="social-icon">
             </a>
             <a href="https://tidal.com/browse/artist/44850156?u" target="_blank" class="fade-in">
-                <img src="https://raw.githubusercontent.com/remedialmusic/remedialmusic.gitihub.io/main/images/Tidal.jpg" alt="Tidal" class="social-icon">
+                <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Tidal.jpg" alt="Tidal" class="social-icon">
             </a>
         </div>
     </section>
@@ -284,16 +300,20 @@
     <!-- Music Section -->
     <section id="music" class="section music-section">
         <div class="section-title-black fade-in">RELEASES</div>
+        <iframe class="youtube-iframe fade-in mx-auto" src="//www.youtube.com/embed/Xz4GvOlwAlc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border:0" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-popups-to-escape-sandbox"></iframe>
         <iframe class="youtube-iframe fade-in mx-auto" src="//www.youtube.com/embed/pIwImVBSUms" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border:0" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-popups-to-escape-sandbox"></iframe>
         <div class="album-subtitle fade-in">COMING SOON</div>
-        <img src="https://raw.githubusercontent.com/remedialmusic/remedialmusic.gitihub.io/main/images/AlbumArt.jpeg" alt="Album Art" class="album-art fade-in">
+        <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/AlbumArt.jpeg" alt="Album Art" class="album-art fade-in">
     </section>
 
     <!-- About Section -->
     <section id="about" class="section about-section">
         <div class="section-title text-white fade-in">ABOUT</div>
         <p class="about-text fade-in mx-auto">Remedial is a music project by Matt Vacaro, former vocalist of Exiting the Fall. I write, produce, and record original metal music, vocal arrangements, and covers. While Remedial focuses primarily on metal, I occasionally hop across genres and nuances. I aim to do creative things with metal vocals, crafting unique vocal lines for instrumental tracks and releasing original music. Interested in collaborating or having me write vocals for your project? <a href="mailto:remedialmusicus@gmail.com" class="underline">Get in touch!</a></p>
-        <p class="copyright fade-in">©2025 REMEDIAL MUSIC US</p>
+        <div class="copyright fade-in">
+            <span>©2025</span>
+            <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Remedial_White_NoBackground.png" alt="Copyright Logo" class="copyright-logo">
+        </div>
     </section>
 
     <script>
