@@ -1,7 +1,7 @@
 name: Scheduled Index.html Update and Deploy
 on:
   schedule:
-    - cron: '50 20 20 7 *' # Runs on July 20th at 4:50 PM EDT
+    - cron: '0 15 25 7 *' # Runs on July 25th at 11:00 AM EDT
   workflow_dispatch: # Allows manual triggering for testing
 permissions:
   contents: write
@@ -28,7 +28,7 @@ jobs:
           path: staging
       - name: Check deployment date
         run: |
-          if [ "$(date +%Y-%m-%d)" != "2025-07-20" ]; then
+          if [ "$(date +%Y-%m-%d)" != "2025-07-25" ]; then
             echo "Not the scheduled date, exiting"
             exit 0
           fi
@@ -41,7 +41,7 @@ jobs:
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
           git add index.html
-          git commit -m "Update index.html from staging on 2025-07-20"
+          git commit -m "Update index.html from staging on 2025-07-25"
           git push origin main
       - name: Setup Pages
         id: pages
