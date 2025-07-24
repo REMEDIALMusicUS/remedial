@@ -89,7 +89,7 @@
 
         .subtitle {
             color: var(--primary-text);
-            font-size: 1.25rem;
+            font-size: clamp(0.5rem, 2.5vw, 1rem);
             font-weight: 600;
             text-align: center;
             letter-spacing: 0.2em;
@@ -116,7 +116,7 @@
             letter-spacing: 0.2em;
             padding: 0.5rem 0;
             z-index: 2;
-            margin-top: auto; /* Push to bottom */
+            margin-top: auto;
         }
 
         .copyright-logo {
@@ -219,6 +219,12 @@
             100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); }
         }
 
+        @keyframes text-glow {
+            0% { text-shadow: 0 0 3px rgba(255, 255, 255, 0.2); }
+            50% { text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.3); }
+            100% { text-shadow: 0 0 3px rgba(255, 255, 255, 0.2); }
+        }
+
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -230,10 +236,10 @@
             transform: translateY(0);
         }
 
-        .typewriter-delay {
+        .typewriter-glow {
             overflow: hidden;
             white-space: nowrap;
-            animation: typing-long 7s steps(22, end) 2s, show 0s 2s forwards;
+            animation: typing-long 7s steps(22, end) 2s, show 0s 2s forwards, text-glow 3s ease-in-out 9s infinite;
             visibility: hidden;
             animation-fill-mode: forwards;
             display: inline-block;
@@ -241,6 +247,10 @@
             min-height: 1.5rem;
             color: var(--primary-text);
             margin-bottom: 3.75rem;
+            font-size: clamp(0.5rem, 2.5vw, 1rem);
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.2em;
         }
 
         @keyframes typing-long {
@@ -274,7 +284,7 @@
             .hero-title {
                 font-size: clamp(0.5rem, 2.5vw, 0.7rem);
             }
-            .subtitle, .album-subtitle {
+            .album-subtitle {
                 font-size: 1rem;
             }
             .about-text {
@@ -329,7 +339,7 @@
         <canvas class="starfield"></canvas>
         <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Remedial_White_NoBackground.png" alt="REMEDIAL Logo" class="mb-4 fade-in remedial-logo">
         <h1 class="hero-title fade-in">METAL VOCAL ARRANGEMENTS & ORIGINAL MUSIC</h1>
-        <p class="subtitle typewriter-delay fade-in">NEW SINGLE 'THE CHRISTIAN' OUT JULY 25TH</p>
+        <p class="typewriter-glow fade-in">NEW SINGLE "THE CHRISTIAN" OUT NOW</p>
         <div class="flex flex-wrap justify-center mt-4">
             <a href="https://www.youtube.com/@REMEDIALMusicUS" target="_blank" class="fade-in">
                 <img src="https://raw.githubusercontent.com/REMEDIALMusicUS/remedial/main/images/Youtube.svg" alt="YouTube Link" class="youtube-icon">
